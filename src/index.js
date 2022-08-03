@@ -24,9 +24,9 @@ const Home = (props) => {
             <div className='Home'>
                 <p >
                     Product List
-                    <button className="add-btn" onClick={() => navigate("/ProductAdd")}>Add</button>
+                    <button className="add-btn" onClick={() => navigate("/ProductAdd")}>ADD</button>
 
-                    <button  className="btn red-btn" onClick={deleteProduct}>Mass Delete</button>
+                    <button  className="btn red-btn" onClick={deleteProduct}>MASS DELETE</button>
 
                     <hr
                         style={{
