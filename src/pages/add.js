@@ -45,7 +45,7 @@ export const  Add = () => {
 
     return (
         <form id="product_form" className="product_form" onSubmit={submitProduct}>
-            <h2>Insert User</h2>
+            <h2>Insert Product</h2>
             <label htmlFor="sku">SKU</label>
 
             <input
