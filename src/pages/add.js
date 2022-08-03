@@ -44,37 +44,37 @@ export const  Add = () => {
 
 
     return (
-        <form className="insertForm" onSubmit={submitProduct}>
+        <form className="product_form" onSubmit={submitProduct}>
             <h2>Insert User</h2>
-            <label htmlFor="_sku">SKU</label>
+            <label htmlFor="sku">SKU</label>
 
             <input
                 type="text"
-                id="_sku"
+                id="sku"
                 onChange={(e) => addNewProduct(e, "sku")}
                 placeholder="Enter SKU"
                 autoComplete="off"
                 required
             />
-            <label htmlFor="_name">Name</label>
+            <label htmlFor="name">Name</label>
             <input
                 type="name"
-                id="_name"
+                id="name"
                 onChange={(e) =>  addNewProduct(e, "name")}
                 placeholder="Enter name"
                 autoComplete="off"
                 required
             />
-            <label htmlFor="_price">Price ($)</label>
+            <label htmlFor="price">Price ($)</label>
             <input
                 type="number"
-                id="_price"
+                id="price"
                 onChange={(e) =>  addNewProduct(e, "price")}
                 placeholder="Enter price"
                 autoComplete="off"
                 required
             />
-            <p>Type Switcher <select className="form-select" value={type} onChange={(e) => {addNewProduct(e, "type");handleChange(e)}} >
+            <p>Type Switcher <select className="productType" value={type} onChange={(e) => {addNewProduct(e, "type");handleChange(e)}} >
                 <option value="select type of product">-- Select Type --</option>
                 <option  value="DVD" >DVD </option>
                 <option value="Furniture">Furniture</option>
@@ -88,10 +88,10 @@ export const  Add = () => {
                     <div className="fs-3">
 
                         <strong>DVD </strong>
-                        <p> <p htmlFor="_size">Size (MB)</p>
+                        <p> <p htmlFor="size">Size (MB)</p>
                             <input
                                 type="number"
-                                id="_size"
+                                id="size"
                                 onChange={(e) => addNewProduct(e, "size")}
                                 placeholder="Enter size"
                                 autoComplete="off"
@@ -109,10 +109,10 @@ export const  Add = () => {
                 <div className="fs-3">
 
                     <strong>Furniture </strong>
-                    <p> <p htmlFor="_height">Dimensions  (CM)</p>
+                    <p> <p htmlFor="height">Dimensions  (CM)</p>
                         <input
                             type="number"
-                            id="_height"
+                            id="height"
                             onChange={(e) => addNewProduct(e, "height")}
                             placeholder="Enter height"
                             autoComplete="off"
@@ -120,7 +120,7 @@ export const  Add = () => {
                         />
                         <input
                             type="number"
-                            id="_width"
+                            id="width"
                             onChange={(e) => addNewProduct(e, "width")}
                             placeholder="Enter width"
                             autoComplete="off"
@@ -128,7 +128,7 @@ export const  Add = () => {
                         />
                         <input
                             type="number"
-                            id="_length"
+                            id="length"
                             onChange={(e) => addNewProduct(e, "length")}
                             placeholder="Enter length"
                             autoComplete="off"

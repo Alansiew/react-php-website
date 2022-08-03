@@ -20,7 +20,8 @@ export const ProductList = () => {
                 <Container key={product.ID}>
                     <Card className="square"
                     >
-                    <input className="checkbox"
+                    <input className="delete-checkbox"
+                           id ='.delete-checkbox'
                         type="checkbox"
                         value={product.ID}
                         checked={product.isChecked}
