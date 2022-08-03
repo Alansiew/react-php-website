@@ -28,7 +28,7 @@ export const Actions = () => {
 
     // Inserting a new product into the database.
     const insertProduct = (newProduct) => {
-        fetch("http://localhost/php-react/add_product.php", {
+        fetch("http://alan-siewiera.epizy.com/untitled1/php-react/add_product.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export const Actions = () => {
     const deleteProduct= async()=>{
         //console.log(isChecked);
         if(isChecked.length!==0){
-            const responce= await axios.post(`http://localhost/php-react/delete_product.php`, JSON.stringify(isChecked));
+            const responce= await axios.post(`http://alan-siewiera.epizy.com/untitled1/php-react/delete_product.php`, JSON.stringify(isChecked));
             setDelMsg(responce.data.msg);
             setTimeout( ()=>{
             }, 2000);
