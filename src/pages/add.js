@@ -147,10 +147,10 @@ export const  Add = () => {
                 <div className="fs-3">
 
                     <strong>BOOK </strong>
-                    <p> <p htmlFor="_weight">Weight (kg)</p>
+                    <p> <p htmlFor="weight">Weight (kg)</p>
                         <input
                             type="number"
-                            id="_weight"
+                            id="weight"
                             onChange={(e) => addNewProduct(e, "weight")}
                             placeholder="Enter weight"
                             autoComplete="off"
