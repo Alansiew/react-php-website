@@ -26,12 +26,16 @@ export const Actions = () => {
             });
     }, []);
 
+
+
+
+
     // Inserting a new product into the database.
     const insertProduct = (newProduct) => {
         fetch("https://siewieraa.000webhostapp.com/add_product.php", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                accept: 'application/json',
             },
             body: JSON.stringify(newProduct),
         })
@@ -48,8 +52,6 @@ export const Actions = () => {
                         ...products,
                     ]);
                     setProductLength(true);
-                } else {
-                    alert(data.msg);
                 }
             })
             .catch((err) => {
