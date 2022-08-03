@@ -26,7 +26,7 @@ const Home = (props) => {
                     Product List
                     <button className="add-btn" onClick={() => navigate("/ProductAdd")}>ADD</button>
 
-                    <button  id="delete-product-btn" onClick={deleteProduct}>MASS DELETE</button>
+                    <button  className="btn red-btn" onClick={deleteProduct}>MASS DELETE</button>
 
                     <hr
                         style={{
