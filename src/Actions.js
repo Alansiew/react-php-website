@@ -9,7 +9,7 @@ export const Actions = () => {
     const [isChecked,setIsChecked]=useState([]);
     const [delmsg, setDelMsg]= useState('');
     useEffect(() => {
-        fetch("http://localhost/php-react/all_products.php")
+        fetch("http://alan-siewiera.epizy.com/untitled1/php-react/all_products.php")
             .then((res) => {
                 return res.json();
             })
