@@ -11,7 +11,7 @@ export const  Add = () => {
     const [type, setType] = useState("selectType");
     const navigate = useNavigate();
 
-    // Storing the Insert User Form Data.
+    
     const addNewProduct = (e, field) => {
         setNewProduct({
             ...newProduct,
