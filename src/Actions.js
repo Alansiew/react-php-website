@@ -8,6 +8,8 @@ export const Actions = () => {
     let [productLength, setProductLength] = useState(null);
     const [isChecked,setIsChecked]=useState([]);
     const [delmsg, setDelMsg]= useState('');
+
+
     useEffect(() => {
         fetch("https://siewieraa.000webhostapp.com/all_products.php")
             .then((res) => {
@@ -59,6 +61,7 @@ export const Actions = () => {
             });
     };
 
+    // storing checked checkbox function
     const handleCheckbox =(e)=>{
         const {value,checked} = e.target;
         if(checked){

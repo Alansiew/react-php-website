@@ -23,7 +23,7 @@ export const  Add = () => {
         setType(e.target.value)
 
     };
-    // Inserting a new user into the Database.
+    //swicher type function
     useEffect(() => {
         type === "DVD"
             ? setDVDContentVisible(true)
