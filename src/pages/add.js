@@ -74,8 +74,8 @@ export const  Add = () => {
                 autoComplete="off"
                 required
             />
-            <p>Type Switcher <select id="productType" className="productType" value={type} onChange={(e) => {addNewProduct(e, "type");handleChange(e)}} >
-                <option value="select type of product">-- Select Type --</option>
+            <p>Type Switcher <select id="productType" required='required' className="productType" value={type} onChange={(e) => {addNewProduct(e, "type");handleChange(e)}} >
+                <option value="">-- Select Type --</option>
                 <option  value="DVD" >DVD </option>
                 <option value="Furniture">Furniture</option>
                 <option value="Book">Book</option>
