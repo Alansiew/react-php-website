@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/../../../../xampp/htdocs/php-react/add_product.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/../../../../xampp/htdocs/php-react/all_products.php" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/../../../../xampp/htdocs/php-react/delete_product.php" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/../../../../xampp/htdocs/php-react/manageData.php" dialect="GenericSQL" />
     <file url="PROJECT" dialect="MariaDB" />
   </component>
 </project>
