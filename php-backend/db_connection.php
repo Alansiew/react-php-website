@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $servername = "localhost";
-    private $username   = "root";
-    private $password   = "necnec1234";
-    private $database   = "products";
+    private $servername = "****";
+    private $username   = "****";
+    private $password   = "****";
+    private $database   = "****";
     // Database Connection
     public function __construct()
     {
