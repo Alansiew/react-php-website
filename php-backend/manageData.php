@@ -2,12 +2,12 @@
 include_once 'db_connection.php';
 include_once 'Product.php';
 
+
 class manageData
 {
     public function insertProduct()
     {
         $db_conn = new Database();
-
         $data = json_decode(file_get_contents("php://input"));
         $sku = mysqli_real_escape_string($db_conn->con, trim($data->sku));
         $name = mysqli_real_escape_string($db_conn->con, trim($data->name));
@@ -19,15 +19,19 @@ class manageData
         $product->setName($name);
         $product->setPrice($price);
         $product->setType($type);
+        $typeProduct=$product->getType($type);
 
         $insertProduct1 = mysqli_query($db_conn->con,
             "INSERT INTO `products` ( `sku`, `name`,`price`,`type`) 
             VALUES ('" . $product->getSku() . "','" . $product->getName() . "','" . $product->getPrice() . "','" . $product->getType() . "')");
-        if ($insertProduct1){
-            return true;
+        if ($typeProduct == "Book"){
+            return $this->insertBook();
         }
-        else{
-            return false;
+        else if($typeProduct == "DVD") {
+            return $this->insertDVD();
+        }
+        else if ($typeProduct == "Furniture"){
+            return $this->insertFurniture();
         }
     }
     public function insertBook()
@@ -180,4 +184,5 @@ LEFT OUTER JOIN furniture ON products.ID = furniture.id";
             echo json_encode(["success" => 0, "msg" => "Product Not Found!"]);
         }
     }
+
 }
