@@ -25,13 +25,13 @@ class manageData
             "INSERT INTO `products` ( `sku`, `name`,`price`,`type`) 
             VALUES ('" . $product->getSku() . "','" . $product->getName() . "','" . $product->getPrice() . "','" . $product->getType() . "')");
         if ($typeProduct == "Book"){
-            return $this->insertBook();
+            return $product->insertBook();
         }
         else if($typeProduct == "DVD") {
-            return $this->insertDVD();
+            return $product->insertDVD();
         }
         else if ($typeProduct == "Furniture"){
-            return $this->insertFurniture();
+            return $product->insertFurniture();
         }
     }
     public function insertBook()
