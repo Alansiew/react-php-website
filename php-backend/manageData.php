@@ -24,14 +24,14 @@ class manageData
         $insertProduct1 = mysqli_query($db_conn->con,
             "INSERT INTO `products` ( `sku`, `name`,`price`,`type`) 
             VALUES ('" . $product->getSku() . "','" . $product->getName() . "','" . $product->getPrice() . "','" . $product->getType() . "')");
-        if ($type == "Book"){
-            return $product->insertBook();
+        if ($typeProduct == "Book"){
+            return insertBook();
         }
-        else if($type == "DVD") {
-            return $product->insertDVD();
+        else if($typeProduct == "DVD") {
+            return insertDVD();
         }
-        else if ($type == "Furniture"){
-            return $product->insertFurniture();
+        else if ($typeProduct == "Furniture"){
+            return insertFurniture();
         }
     }
     public function insertBook()
