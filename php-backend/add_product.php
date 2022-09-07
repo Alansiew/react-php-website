@@ -17,17 +17,8 @@ $db_conn= new Database();
 $product = new manageData;
 
 
-$new=$product->insertProduct();
+$product=$manageData->insertProduct();
 
-if ($new) {
-    $dvd = $product->insertDVD();
-        }
-if($new){
-    $book=$product->insertBook();
-}
-if($new){
-    $furniture=$product->insertFurniture();
-}
 
 
 
