@@ -20,15 +20,17 @@ class manageData
         $product->setPrice($price);
         $product->setType($type);
         $typeProduct=$product->getType();
-
+        echo "echo product";
         $insertProduct1 = mysqli_query($db_conn->con,
             "INSERT INTO `products` ( `sku`, `name`,`price`,`type`) 
             VALUES ('" . $product->getSku() . "','" . $product->getName() . "','" . $product->getPrice() . "','" . $product->getType() . "')");
+        
         if ($typeProduct == "Book"){
+            echo "echo book";
             return $this->insertBook();
         }
         else if($typeProduct == "DVD") {
-            echo "as";
+            
             return $this->insertDVD();
         }
         else if ($typeProduct == "Furniture"){
