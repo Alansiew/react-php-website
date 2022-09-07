@@ -20,20 +20,20 @@ class manageData
         $product->setPrice($price);
         $product->setType($type);
         $typeProduct=$product->getType();
-        echo "echo product";
-        $insertProduct1 = mysqli_query($db_conn->con,
+        
+        mysqli_query($db_conn->con,
             "INSERT INTO `products` ( `sku`, `name`,`price`,`type`) 
             VALUES ('" . $product->getSku() . "','" . $product->getName() . "','" . $product->getPrice() . "','" . $product->getType() . "')");
         
         if ($typeProduct == "Book"){
-            echo "echo book";
+           
             return $this->insertBook();
         }
-        else if($typeProduct == "DVD") {
+         if($typeProduct == "DVD") {
             
             return $this->insertDVD();
         }
-        else if ($typeProduct == "Furniture"){
+         if ($typeProduct == "Furniture"){
             return $this->insertFurniture();
         }
     }
@@ -54,20 +54,21 @@ class manageData
         $result = mysqli_fetch_assoc($query);
         $last_id = $result['ID'];
 
-        $query2 = mysqli_query($db_conn->con, "select COLUMN_NAME from information_schema.columns where
-                                                       table_name='$last_type' and COLUMN_NAME like 'Weight'");
-        $result1 = mysqli_fetch_assoc($query2);
-        $column = $result1['COLUMN_NAME'];
+        
+       
         $weight = $book->getWeight();
-
+        
         $insertProduct1 = mysqli_query($db_conn->con,
-            "INSERT INTO   book  ( `id`,`type`,`$column`) 
+            "INSERT INTO   book  ( `id`,`type`,`Weight`) 
             VALUES ('$last_id','$last_type','$weight')  ");
         if ($insertProduct1) {
 
             echo json_encode(["success" => 1, "msg" => "Product Added.", "id" => $last_id]);
+           
             return true;
         } else {
+             
+
             echo json_encode(["success" => 0, "msg" => "Product Not Added!"]);
             return false;
 
@@ -90,14 +91,12 @@ class manageData
         $query = mysqli_query($db_conn->con,"SELECT ID FROM products WHERE ID = ( SELECT MAX(ID) FROM products)");
         $result = mysqli_fetch_assoc($query);
         $last_id = $result['ID'];
-        $query2 = mysqli_query($db_conn->con, "select COLUMN_NAME from information_schema.columns where
-                                                       table_name='$last_type' and COLUMN_NAME like 'size'");
-        $result1 = mysqli_fetch_assoc($query2);
-        $column = $result1['COLUMN_NAME'];
+        
+        
         $size = $dvd->getSize();
 
         $insertProduct2 = mysqli_query($db_conn->con,
-            "INSERT INTO   dvd  ( `id`,`type`,`$column`) 
+            "INSERT INTO   dvd  ( `id`,`type`,`Size`) 
             VALUES ('$last_id','$last_type','$size')  ");
         if ($insertProduct2) {
 
