@@ -19,7 +19,7 @@ class manageData
         $product->setName($name);
         $product->setPrice($price);
         $product->setType($type);
-        $typeProduct=$product->getType($type);
+        $typeProduct=$product->getType();
 
         $insertProduct1 = mysqli_query($db_conn->con,
             "INSERT INTO `products` ( `sku`, `name`,`price`,`type`) 
