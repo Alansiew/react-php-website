@@ -35,12 +35,12 @@ LEFT OUTER JOIN furniture ON products.ID = furniture.id";
         $db_conn = new Database();
 
         if ($data) {
-            $deleteProduct1 = mysqli_query($db_conn->con, "DELETE FROM `dvd` WHERE dvd.id IN (" . implode(',', $data) . ")");
-            $deleteProduct2 = mysqli_query($db_conn->con, "DELETE FROM `furniture` WHERE  furniture.id IN (" . implode(',', $data) . ")");
-            $deleteProduct3 = mysqli_query($db_conn->con, "DELETE FROM `book` WHERE book.id IN (" . implode(',', $data) . ")");
-            $deleteProduct4 = mysqli_query($db_conn->con, "DELETE FROM `products` WHERE products.ID IN (" . implode(',', $data) . ")");
+            $deleteDVD = mysqli_query($db_conn->con, "DELETE FROM `dvd` WHERE dvd.id IN (" . implode(',', $data) . ")");
+            $deleteFurniture = mysqli_query($db_conn->con, "DELETE FROM `furniture` WHERE  furniture.id IN (" . implode(',', $data) . ")");
+            $deleteBook = mysqli_query($db_conn->con, "DELETE FROM `book` WHERE book.id IN (" . implode(',', $data) . ")");
+            $deleteProduct= mysqli_query($db_conn->con, "DELETE FROM `products` WHERE products.ID IN (" . implode(',', $data) . ")");
 
-            if ($deleteProduct1 || $deleteProduct2 || $deleteProduct3 || $deleteProduct4) {
+            if ($deleteDVD || $deleteFurniture || $deleteBook || $deleteProduct) {
                 echo json_encode(["success" => 1, "msg" => "Product Deleted"]);
             } else {
                 echo json_encode(["success" => 0, "msg" => "Product Not Found!"]);
