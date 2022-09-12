@@ -45,7 +45,7 @@ include_once 'manageData.php';
      {
          $this->type = $type;
      }
+     abstract public function insertProduct();
 
 
 }
-
