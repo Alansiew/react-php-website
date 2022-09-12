@@ -10,14 +10,16 @@ include_once 'Product.php';
 include_once 'DVD.php';
 include_once 'Book.php';
 include_once 'Furniture.php';
-include_once 'manageData.php';
+
 $db_conn= new Database();
+$data = json_decode(file_get_contents("php://input"));
+
+$type = mysqli_real_escape_string($db_conn->con, trim($data->type));
 
 
-$product = new manageData;
+$product = new $type(null,null,null,null,null,null,null);
+$product->insertProduct();
 
-
-$product=$manageData->insertProduct();
 
 
 
