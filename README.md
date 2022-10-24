@@ -1,2 +1,2 @@
 link to the website
-https://master.d3of5c84fh7ea8.amplifyapp.com/
+https://master.d36xy8kv4jx4sw.amplifyapp.com/
